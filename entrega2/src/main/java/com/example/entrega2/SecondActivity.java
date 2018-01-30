@@ -71,7 +71,10 @@ public class SecondActivity extends AppCompatActivity {
                 "https://jamesdalyburton.files.wordpress.com/2014/02/screen-shot-2014-02-17-at-1-09-03-pm.jpg");*/
 
         HttpJsonAsyncTask httpJsonAsyncTask = new HttpJsonAsyncTask();
-        httpJsonAsyncTask.execute("");
+        String url = String.format("http://api.openweathermap.org/data/2.5/weather?id=%s&appid=%s",
+                "3117732", DataHolder.MyDataHolder.API_KEY);
+        Log.v("HttpJsonAsyncTask",url);
+        httpJsonAsyncTask.execute(url);
 
     /*
     Hay que tener en cuenta que si añadimos otro fragment al linearLayout este último sobrescribirá al primero por tanto para poder

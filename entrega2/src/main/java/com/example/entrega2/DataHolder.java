@@ -14,6 +14,7 @@ public class DataHolder {
     public static class MyDataHolder {
         public static FirebaseAdmin firebaseAdmin;
         public static ListFragment listFragment;
+        public static final String API_KEY="8c4f997ad0c9aef11dc9ac3016df482c";
 
         public static FirebaseAdmin getFirebaseAdmin() {
             return firebaseAdmin;
