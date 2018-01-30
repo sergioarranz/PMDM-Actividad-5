@@ -63,7 +63,11 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         HttpAsyncTask httpAsyncTask = new HttpAsyncTask();
-        httpAsyncTask.execute("https://content-static.upwork.com/blog/uploads/sites/3/2016/08/24161340/AsyncTask.png");
+        httpAsyncTask.execute("https://raw.githubusercontent.com/ubelab/mockandroidasynctask/master/MockAndroidAsyncTask/images/mockasynctaskandroid.png",
+                "http://iosdevlog.com/assets/images/Rx/RxJava/AsynchronousAndroidProgramming-SecondEdition/AsyncTask.png",
+                "https://i.stack.imgur.com/3cEZG.jpg",
+                "https://i.stack.imgur.com/5sv7T.png",
+                "https://jamesdalyburton.files.wordpress.com/2014/02/screen-shot-2014-02-17-at-1-09-03-pm.jpg");
 
     /*
     Hay que tener en cuenta que si añadimos otro fragment al linearLayout este último sobrescribirá al primero por tanto para poder
