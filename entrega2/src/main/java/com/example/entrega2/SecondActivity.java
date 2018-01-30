@@ -63,7 +63,7 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         HttpAsyncTask httpAsyncTask = new HttpAsyncTask();
-        httpAsyncTask.execute("http://www.google.com");
+        httpAsyncTask.execute("https://content-static.upwork.com/blog/uploads/sites/3/2016/08/24161340/AsyncTask.png");
 
     /*
     Hay que tener en cuenta que si añadimos otro fragment al linearLayout este último sobrescribirá al primero por tanto para poder
