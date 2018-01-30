@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.mylib.GPSAdmin.GPSTracker;
 import com.example.mylib.asynctasks.HttpAsyncTask;
+import com.example.mylib.asynctasks.HttpJsonAsyncTask;
 import com.example.mylib.fragment.DetallesFragment;
 import com.example.mylib.fragment.ListFragment;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -62,12 +63,15 @@ public class SecondActivity extends AppCompatActivity {
                gpsTracker.showSettingsAlert();
         }
 
-        HttpAsyncTask httpAsyncTask = new HttpAsyncTask();
+        /*HttpAsyncTask httpAsyncTask = new HttpAsyncTask();
         httpAsyncTask.execute("https://raw.githubusercontent.com/ubelab/mockandroidasynctask/master/MockAndroidAsyncTask/images/mockasynctaskandroid.png",
                 "http://iosdevlog.com/assets/images/Rx/RxJava/AsynchronousAndroidProgramming-SecondEdition/AsyncTask.png",
                 "https://i.stack.imgur.com/3cEZG.jpg",
                 "https://i.stack.imgur.com/5sv7T.png",
-                "https://jamesdalyburton.files.wordpress.com/2014/02/screen-shot-2014-02-17-at-1-09-03-pm.jpg");
+                "https://jamesdalyburton.files.wordpress.com/2014/02/screen-shot-2014-02-17-at-1-09-03-pm.jpg");*/
+
+        HttpJsonAsyncTask httpJsonAsyncTask = new HttpJsonAsyncTask();
+        httpJsonAsyncTask.execute("");
 
     /*
     Hay que tener en cuenta que si añadimos otro fragment al linearLayout este último sobrescribirá al primero por tanto para poder
