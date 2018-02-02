@@ -2,6 +2,7 @@ package com.example.mylib.asynctasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,9 +19,14 @@ public class HttpJsonAsyncTask extends AsyncTask<String,Integer,String>{
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
+    HttpJsonAsyncTaskListener httpJsonAsyncTaskListener;
 
     public HttpJsonAsyncTask(){
 
+    }
+
+    public void setHttpJsonAsyncTaskListener(HttpJsonAsyncTaskListener httpJsonAsyncTaskListener) {
+        this.httpJsonAsyncTaskListener = httpJsonAsyncTaskListener;
     }
 
     @Override
@@ -80,3 +86,4 @@ public class HttpJsonAsyncTask extends AsyncTask<String,Integer,String>{
         Log.v("HttpJsonAsyncTask", "JSON DESCARGADO: "+s);
     }
 }
+

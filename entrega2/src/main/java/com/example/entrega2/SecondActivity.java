@@ -76,6 +76,12 @@ public class SecondActivity extends AppCompatActivity {
         Log.v("HttpJsonAsyncTask",url);
         httpJsonAsyncTask.execute(url);
 
+        HttpJsonAsyncTask httpJsonAsyncTask1=new HttpJsonAsyncTask();
+        String url1=String.format("http://10.0.2.2/pruebasJSON/leejugadores.php");
+        httpJsonAsyncTask.setHttpJsonAsyncTaskListener(events);
+        httpJsonAsyncTask1.execute(url1);
+
+        //Log.v("SecondActivity","--------EMAAAIL: "+DataHolder.MyDataHolder.firebaseAdmin.user.getEmail());
     /*
     Hay que tener en cuenta que si añadimos otro fragment al linearLayout este último sobrescribirá al primero por tanto para poder
     meter varios, lo mejor es crear distintos linearlayouts dentro un linearlayout padre.

@@ -15,6 +15,7 @@ import com.example.entrega2.adapter.ListAdapterListener;
 import com.example.entrega2.adapter.MyViewHolder;
 import com.example.entrega2.entity.Coche;
 import com.example.entrega2.firebase.FirebaseAdminListener;
+import com.example.mylib.asynctasks.HttpJsonAsyncTaskListener;
 import com.example.mylib.fragment.ListFragment;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -30,13 +31,17 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.GenericTypeIndicator;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
  * Created by tay on 25/11/17.
  */
 
-public class SecondActivityEvents implements View.OnClickListener, FirebaseAdminListener,ListAdapterListener,OnMapReadyCallback,GoogleMap.OnMarkerClickListener {
+public class SecondActivityEvents implements View.OnClickListener, FirebaseAdminListener,ListAdapterListener,OnMapReadyCallback,GoogleMap.OnMarkerClickListener, HttpJsonAsyncTaskListener {
 
     private SecondActivity secondActivity;
     GoogleMap mMap;
@@ -167,5 +172,20 @@ public class SecondActivityEvents implements View.OnClickListener, FirebaseAdmin
         transaction.commit(); // comiteamos
 
         return false;
+    }
+
+    @Override
+    public void DownloadedJSONData(String s) {
+        /*
+        try {
+            JSONObject jsonObject = new JSONObject(String.valueOf(s));
+            JSONArray jugadores = jsonObject.getJSONArray("jugadores");
+            this.secondActivity.setText(jsonObject.get("name").toString());
+            this.getMainActivity().getMostrarPosicionFragment().getTxtTiempo().setText(jArrayWeather.getJSONObject(0).get("main").toString());
+            this.getMainActivity().getMostrarPosicionFragment().getTxtTemperatura().setText(jObjectMain.get("temp").toString());
+            this.getMainActivity().getMostrarPosicionFragment().getTxtHumedad().setText(jObjectMain.get("humidity").toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }*/
     }
 }

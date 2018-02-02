@@ -34,6 +34,7 @@ public class FirebaseAdmin {
     private FirebaseAdminListener firebaseAdminListener;
     private  DatabaseReference myChildRef;
     private ValueEventListener valueEventListene=null;
+    public FirebaseUser user;
 
 
     public FirebaseAdmin() {
@@ -110,6 +111,7 @@ public class FirebaseAdmin {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            user = FirebaseAuth.getInstance().getCurrentUser();
                             getmAuth().signOut();
                             firebaseAdminListener.registerOk(true);
 
@@ -133,7 +135,7 @@ public class FirebaseAdmin {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             System.out.println("ACABO DE LOGUEARME!!!!!!!!");
                             if (task.isSuccessful()) {
-
+                                user = FirebaseAuth.getInstance().getCurrentUser();
                                 System.out.println("dentroDelOnComplete");
 
                                 firebaseAdminListener.loginIsOk(true);
